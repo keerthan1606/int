@@ -1,105 +1,16 @@
-import { useEffect, useState } from "react";
-import "./navbar.css";
+import React from "react";
+import "./Navbar.css";
 
-const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") || "light"
-  );
-  const [active, setActive] = useState("hero");
-
-  useEffect(() => {
-    document.body.dataset.theme = theme;
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-
-    const handleScroll = () => {
-      let current = "hero";
-
-      sections.forEach((section) => {
-        if (window.scrollY >= section.offsetTop - 120) {
-          current = section.id;
-        }
-      });
-
-      setActive(current);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  };
-
+export default function Navbar() {
   return (
-    <header className="site-header">
-      <nav className="navbar">
-        <div className="logo">KSG.</div>
-
-        <ul className={menuOpen ? "nav-links open" : "nav-links"}>
-          <li>
-            <a
-              href="#about"
-              className={active === "about" ? "active" : ""}
-              onClick={() => setMenuOpen(false)}
-            >
-              About
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#skills"
-              className={active === "skills" ? "active" : ""}
-              onClick={() => setMenuOpen(false)}
-            >
-              Skills
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#projects"
-              className={active === "projects" ? "active" : ""}
-              onClick={() => setMenuOpen(false)}
-            >
-              Projects
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#contact"
-              className={active === "contact" ? "active" : ""}
-              onClick={() => setMenuOpen(false)}
-            >
-              Contact
-            </a>
-          </li>
-        </ul>
-
-        <button
-          className="theme-toggle"
-          onClick={toggleTheme}
-        >
-          {theme === "dark" ? "🌙" : "☀️"}
-        </button>
-
-        <button
-          className="menu-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          ☰
-        </button>
-      </nav>
-    </header>
+    <nav className="navbar">
+      <div className="logo">Keerthan</div>
+      <ul className="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   );
-};
-
-export default Navbar; //navbar.jsx
+}

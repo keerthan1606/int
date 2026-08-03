@@ -1,66 +1,50 @@
-import "./about.css";
-import profile from "../../assets/keerthan.jpg";
+import React from "react";
+import "./About.css";
+import profileImg from "../../assets/keerthan.jpg";
 
-const About = () => {
+export default function About() {
   return (
     <section id="about" className="about-section">
-      <h2>About Me</h2>
-
       <div className="about-container">
+        {/* Left side - profile image */}
         <div className="about-image">
-          <img src={profile} alt="Keerthan S Gowda" />
+          <img src={profileImg} alt="Keerthan S Gowda" />
         </div>
 
+        {/* Right side - text content */}
         <div className="about-content">
-          <h3>Hi, I'm Keerthan S Gowda 👋</h3>
-          <strong>
+          <h2>Hi, I'm Keerthan S Gowda 👋</h2>
           <p>
             I'm a passionate Web Developer from Bangalore who enjoys creating
             modern, responsive, and user-friendly websites using the latest web
             technologies.
           </p>
-</strong>
           <p>
-            My primary skills include HTML, CSS, JavaScript, React, and
-            Node.js. I enjoy learning new technologies and building projects
-            that solve real-world problems.
+            My primary skills include <strong>HTML, CSS, JavaScript, React, and Node.js</strong>.
+            I enjoy learning new technologies and building projects that solve
+            real-world problems.
+          </p>
+          <p>
+            My goal is to become a <strong>Full Stack Developer</strong> and contribute to impactful
+            software products while continuously improving my development skills.
           </p>
 
-          <p>
-            My goal is to become a Full Stack Developer and contribute to
-            impactful software products while continuously improving my
-            development skills.
-          </p>
+          {/* Personal details */}
+          <ul className="about-details">
+            <li><strong>Name:</strong> Keerthan S Gowda</li>
+            <li><strong>Location:</strong> Bangalore, India</li>
+            <li><strong>Role:</strong> Web Developer</li>
+            <li><strong>Email:</strong> space6270@gmail.com</li>
+          </ul>
 
-          <div className="about-info">
-            <div>
-              <span>Name</span>
-              <p>Keerthan S Gowda</p>
-            </div>
-
-            <div>
-              <span>Location</span>
-              <p>Bangalore, India</p>
-            </div>
-
-            <div>
-              <span>Role</span>
-              <p>Web Developer</p>
-            </div>
-
-            <div>
-              <span>Email</span>
-              <p>space6270@gmail.com</p>
-            </div>
+          {/* Connect buttons */}
+          <div className="about-connect">
+            <a href="mailto:space6270@gmail.com" className="btn">Email Me</a>
+            <a href="https://www.linkedin.com/in/keerthan-s-gowda-5521aa381/" target="_blank" rel="noreferrer" className="btn">LinkedIn</a>
+            <a href="https://github.com/keerthan1606" target="_blank" rel="noreferrer" className="btn">GitHub</a>
           </div>
-
-          <a href="#contact" className="about-btn">
-            Let's Connect
-          </a>
         </div>
       </div>
     </section>
   );
-};
-
-export default About;
+}

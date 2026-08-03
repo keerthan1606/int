@@ -1,64 +1,30 @@
-import "./skill.css";
+import React from "react";
+import "./Skill.css";
 
-const skills = [
-  {
-    name: "HTML",
-    level: 90,
-    color: "#E34F26",
-  },
-  {
-    name: "CSS",
-    level: 85,
-    color: "#1572B6",
-  },
-  {
-    name: "JavaScript",
-    level: 75,
-    color: "#F7DF1E",
-  },
-  {
-    name: "React",
-    level: 65,
-    color: "#61DAFB",
-  },
-  {
-    name: "Node.js",
-    level: 60,
-    color: "#339933",
-  },
-  {
-    name: "Git",
-    level: 70,
-    color: "#F05032",
-  },
-];
+export default function Skill() {
+  const skills = [
+    { name: "HTML", level: "90%" },
+    { name: "CSS", level: "80%" },
+    { name: "JavaScript", level: "75%" },
+    { name: "React", level: "60%" },
+  ];
 
-const Skills = () => {
   return (
-    <section id="skills" className="skills-section">
-      <h2>My Skills</h2>
-
-      <div className="skills-grid">
-        {skills.map((skill) => (
-          <div className="skill-card" key={skill.name}>
-            <h3>{skill.name}</h3>
-
-            <div className="progress-bar">
+    <section id="skills" className="skill-section">
+      <h2 className="section-title">My Skills</h2>
+      <div className="skill-grid">
+        {skills.map((skill, index) => (
+          <div key={index} className="skill-item">
+            <span>{skill.name}</span>
+            <div className="skill-bar">
               <div
-                className="progress"
-                style={{
-                  width: `${skill.level}%`,
-                  backgroundColor: skill.color,
-                }}
-              >
-                {skill.level}%
-              </div>
+                className="skill-progress"
+                style={{ width: skill.level }}
+              ></div>
             </div>
           </div>
         ))}
       </div>
     </section>
   );
-};
-
-export default Skills; //skills.jsx
+}

@@ -1,22 +1,26 @@
 import React from "react";
+import "./App.css";
+
+// Import your components
 import Navbar from "./components/navbar/navbar";
 import Hero from "./components/hero/hero";
 import About from "./components/about/about";
-import Skills from "./components/skills/skill";
-import Projects from "./components/projects/project";
-import Contact from "./components/contact/contact";
+import Skill from "./components/skills/skill";
+import Project from "./components/projects/project";
+import Contact from "./components/Contact/contact";
 import Footer from "./components/footer/footer";
-import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
       <main>
         <Hero />
         <About />
-        <Skills />
-        <Projects />
+        <Skill />
+        <Project />
         <Contact />
       </main>
       <Footer />

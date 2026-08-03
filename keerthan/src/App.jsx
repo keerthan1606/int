@@ -7,7 +7,7 @@ import hero from "./components/hero/hero";
 import about from "./components/about/about";
 import skill from "./components/skills/skill";
 import project from "./components/projects/project";
-import contact from "./components/Contact/contact";
+import contact from "./components/contacts/contacts";
 import footer from "./components/footer/footer";
 
 function App() {

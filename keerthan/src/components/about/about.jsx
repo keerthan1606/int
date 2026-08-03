@@ -1,5 +1,5 @@
 import React from "react";
-import "./About.css";
+import "./about.css";
 import profileImg from "../../assets/keerthan.jpg";
 
 export default function About() {

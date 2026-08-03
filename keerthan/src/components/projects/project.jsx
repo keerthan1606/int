@@ -1,5 +1,5 @@
 import React from "react";
-import "./Project.css";
+import "./project.css";
 
 // Import images
 import weatherImg from "../../assets/wap.jpg";

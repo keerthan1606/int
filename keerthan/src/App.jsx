@@ -2,13 +2,13 @@ import React from "react";
 import "./App.css";
 
 // Import your components
-import navbar from "./components/navbar/navbar";
-import hero from "./components/hero/hero";
-import about from "./components/about/about";
-import skill from "./components/skills/skill";
-import project from "./components/projects/project";
-import contact from "./components/contacts/contacts";
-import footer from "./components/footer/footer";
+import Navbar from "./components/navbar/navbar";
+import Hero from "./components/hero/hero";
+import About from "./components/about/about";
+import Skill from "./components/skills/skill";
+import Project from "./components/projects/project";
+import Contact from "./components/contacts/contacts";
+import Footer from "./components/footer/footer";
 
 function App() {
   return (
